@@ -1,0 +1,44 @@
+=== Accessibility Statement ===
+Simone is developed with accessibility-ready theme requirements and WCAG guidance in mind. Accessibility is considered during updates to templates, navigation, controls, links, forms, and CSS, with the goal of keeping the theme usable with keyboard navigation, screen readers, browser zoom, and other assistive technologies.
+
+== Quick Information ==
+Accessibility audit completed: No
+
+== Testing Tools and Methodology ==
+Accessibility checks for Simone are performed during development and maintenance using a combination of manual review and browser-based testing.
+Tools include but are not limited to: NVDA Screen reader (Windows), HeadingsMap browser extension, WAVE browser extension by Webaim.
+
+Testing includes:
+* Keyboard-only navigation checks including but not limited to the main menu, the search form toggle, and the author box toggle.
+* Review of visible focus styles and focus order.
+* Review of landmark roles and accessible names.
+* Review of controls for appropriate names, roles, and states.
+* Review of link text and linked images for meaningful accessible names.
+* Review of heading order in theme templates.
+* Review of color contrast for theme-provided default colors.
+* Review of form elements, labels.
+* Browser responsive testing for reflow, zoom, and small screens.
+
+== Screen Reader Text Class ==
+`.screen-reader-text`
+
+== Accessibility Features ==
+Simone includes accessibility-focused features and patterns including:
+* A skip link to the main content.
+* Keyboard-operable navigation.
+* Visible focus styles for links and controls.
+* Semantic HTML5 landmarks and labelled navigation regions.
+* Screen-reader text support through the `.screen-reader-text` class.
+* Search, menu, and author-box toggles implemented as buttons with accessible names and states.
+* Meaningful accessible names for post links and linked featured images.
+* Underlined links in post content and comment content.
+* Local fonts and responsive text sizing.
+* Sidebar ordering support so visual and keyboard order remain logical on small screens.
+
+== Accessibility Help Contact ==
+For accessibility help with Simone, use the WordPress.org support forum:
+https://wordpress.org/support/theme/simone/
+
+== Where to Report Issues ==
+Please report accessibility issues in the WordPress.org support forum:
+https://wordpress.org/support/theme/simone/

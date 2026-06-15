@@ -1,0 +1,228 @@
+/*
+Theme Name: Simone
+Description: Used to style the classic editor in posts and pages. Use with the classic editor plugin.
+*/
+
+/* =Body
+----------------------------------------------- */
+html .mceContentBody {
+	max-width: 700px;
+}
+
+body.mce-content-body  {
+	color: #404040;
+	font-family: 'PT Serif', sans-serif;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+/* =Base elements
+----------------------------------------------- */
+.mce-content-body img {
+	max-width: 100%;
+	height: auto;
+}
+
+.mce-content-body a {
+	color: hsl(0, 0%, 0%);
+}
+
+.mce-content-body a:visited {
+	color: hsl(0, 0%, 20%);
+}
+
+.mce-content-body h1,
+.mce-content-body h2,
+.mce-content-body h3,
+.mce-content-body h4,
+.mce-content-body h5,
+.mce-content-body h6 {
+	clear: right;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	color: hsl(0, 0%, 0%);
+	margin-bottom: .4em;
+}
+
+.mce-content-body h1 {
+	font-size: 32px;
+}
+
+.mce-content-body h2 {
+	font-size: 30px;
+}
+
+.mce-content-body h3 {
+	font-size: 28px;
+}
+
+.mce-content-body h4 {
+	font-size: 26px;
+}
+
+.mce-content-body h5 {
+	font-size: 24px;
+}
+
+.mce-content-body h6 {
+	font-size: 22px;
+}
+
+.mce-content-body p,
+.mce-content-body ul,
+.mce-content-body ol {
+	font-size: 20px;
+	line-height: 1.6em;
+}
+
+/* =Blockquotes
+----------------------------------------------- */
+.mce-content-body blockquote p {
+	font-size: 28px;
+	line-height: 1.5em;
+}
+
+.mce-content-body blockquote {
+	padding: 1em 1.5em 0;
+	margin-bottom: 1em;
+	font-style: italic;
+	border-top: solid 1px hsl(0, 0%, 80%);
+	border-bottom: solid 1px hsl(0, 0%, 80%);
+}
+
+.mce-content-body blockquote.alignleft {
+	float: left;
+	width: 50%;
+	padding: 1em 0 0;
+	margin-right: 1.5em;
+}
+
+.mce-content-body blockquote.alignright {
+	float: right;
+	width: 50%;
+	padding: 1em 0 0;
+	margin-left: 1.5em;
+}
+
+.mce-content-body blockquote em {
+	font-style: normal;
+}
+
+.mce-content-body blockquote cite {
+	display: block;
+	font-family: 'Lato', sans-serif;
+	font-style: normal;
+	text-align: right;
+	font-size: 18px;
+	line-height: 1.5em;
+	margin-top: 1em;
+	margin-left: 40%;
+}
+
+.mce-content-body blockquote.alignleft cite {
+	text-align: left;
+	margin-left: 0;
+	margin-right: 40%;
+}
+
+
+/* =Images
+ ----------------------------------------------- */
+
+ .mce-content-body .wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+	border: none;
+	text-align: center;
+	background-color: #fff;
+	padding-top: 0;
+	margin: 10px 0;
+}
+.mce-content-body .wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0 auto;
+}
+.mce-content-body .wp-caption-text {
+	text-align: center;
+}
+
+.mce-content-body .gallery-caption,
+.mce-content-body .wp-caption .wp-caption-text,
+.mce-content-body .wp-caption-dd {
+	padding: 0.8075em 1em;
+	background: hsl(0, 0%, 90%);
+	border-left: #fff solid 5px;
+	border-right: #fff solid 5px;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+}
+
+/* Due to HTML5 galleries being activated default gallery styling does not apply.*/
+
+.mce-content-body .gallery {
+	margin: auto 0;
+	padding: 6px;
+	width: 712px;
+}
+
+.mce-content-body .gallery-item:hover .gallery-caption {
+	opacity: 1;
+}
+
+.mce-content-body .gallery img {
+	display: block;
+}
+.mce-content-body .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+.mce-content-body .gallery-item {
+	float: left;
+	width: auto!important;
+	margin-right: 3.333333333%!important;
+	margin-bottom: 30px!important;
+	padding: 0!important;
+	background: #333;
+	overflow: hidden;
+	position: relative;
+}
+
+.mce-content-body .gallery-caption {
+	background-color: hsla(0, 0%, 0%, .8);
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 0!important;
+	border: none;
+	max-height: 50%;
+	opacity: 0;
+	padding: 6px 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	width: 100%;
+}
+
+/* =Alignment
+----------------------------------------------- */
+
+.mce-content-body .alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.mce-content-body .alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.mce-content-body .aligncenter {
+	clear: right;
+	display: block;
+	margin: 0 auto;
+}
