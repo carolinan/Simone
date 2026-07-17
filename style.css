@@ -4,7 +4,7 @@ Theme URI:
 Author: Carolina Nymark
 Author URI: https://themesbycarolina.com
 Description: Simone is a responsive accessible theme featuring custom header and custom link colors, large images, and easy to read typography that scales to fit all screens. Other features include keyboard accessible navigation, optional social menu, sidebar- and footer widgets, no-sidebar page template, Aside post format, and collapsible author profile box.
-Version: 2.2
+Version: 2.2.1
 Tested up to: 7.0
 Requires at least: 7.0
 Requires PHP: 8.3
@@ -122,7 +122,7 @@ blockquote, q {
 	quotes: "" "";
 }
 a:focus {
-	outline: 2px dotted;
+	outline: 2px solid;
 }
 
 a:hover,
@@ -184,11 +184,6 @@ code, kbd, tt, var { font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mo
 abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
-}
-
-mark, ins {
-	text-decoration: none;
-	background: #fff9c0;
 }
 
 sup, sub {
@@ -324,7 +319,7 @@ textarea {
 	padding: 8px;
 	font-family: 'Lato', sans-serif;
 	color: #333;
-	border: 1px solid #ccc;
+	border: 1px solid #949494;
 }
 
 input[type="text"]:focus,
@@ -334,6 +329,12 @@ input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
 	color: #111;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"] {
+	width: 100%;
 }
 
 textarea {
@@ -980,8 +981,7 @@ a:focus.page-numbers{
 }
 
 .search-toggle button:focus {
-	outline: 2px dotted;
-	outline-offset: -4px;
+	outline: 2px solid;
 	background: transparent;
 }
 
@@ -1045,8 +1045,8 @@ a:focus.page-numbers{
 
 .hide { display: none; }
 
-.error404 .search-submit,
-.search .search-submit { display: none; }
+.error404 .entry-content .search-submit,
+.search .entry-content .search-submit { margin-top: 1rem; }
 
 .search-box .search-submit {
 	display: inline-block;

@@ -36,20 +36,30 @@
 	<header class="entry-header clear">
 		<?php
 		// Display a thumb tack in the top right hand corner if this post is sticky.
+		$simone_sticky_label = '';
 		if ( is_sticky() ) {
-			echo '<i class="fa fa-thumb-tack sticky-post"></i>';
+			echo '<i class="fa fa-thumb-tack sticky-post" aria-hidden="true"></i>';
+			$simone_sticky_label = '<span class="screen-reader-text">' . esc_html__( 'Sticky post', 'simone' ) . '</span>';
 		}
 
 		/* translators: used between list items, there is a space after the comma. */
 		$category_list = get_the_category_list( __( ', ', 'simone' ) );
+
+		// If the current page is the 404 or there are no search results,
+		// the heading level needs to be 3, because there is a level 2 heading
+		// above the list of posts.
+		$simone_entry_heading = ( is_404() || ( is_search() && 0 === (int) $wp_query->found_posts ) ) ? 'h3' : 'h2';
+
+		echo '<' . $simone_entry_heading . ' class="entry-title">';
 		?>
-		<h2 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark">
 				<?php simone_the_title(); ?>
 			</a>
-		</h2>
+		<?php
+		echo '</' . $simone_entry_heading . '>';
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+		echo $simone_sticky_label;
+		if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php simone_posted_on(); ?>
 			<?php
@@ -61,7 +71,11 @@
 			$simone_has_comments_link = ! post_password_required() && ( comments_open() || '0' != get_comments_number() );
 			if ( $simone_has_comments_link ) {
 				echo '<span class="comments-link">';
-				comments_popup_link( __( 'Leave a comment', 'simone' ), __( '1 Comment', 'simone' ), __( '% Comments', 'simone' ) );
+				comments_popup_link(
+					simone_get_comments_popup_link_text( get_comments_number() ),
+					simone_get_comments_popup_link_text( 1 ),
+					simone_get_comments_popup_link_text( get_comments_number() )
+				);
 				echo '<span class="meta-separator">' . esc_html_x( '.', 'separator between post meta links', 'simone' ) . '</span></span>';
 			}
 			?>
@@ -76,7 +90,7 @@
 			the_content();
 			echo '</div>';
 			echo '<footer class="entry-footer continue-reading">';
-			echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . __('Read <span aria-hidden="true">the article</span>', 'simone') . '<i class="fa fa-arrow-circle-o-right"></i><span class="screen-reader-text"> ' . esc_html( simone_get_read_more_title() ) . '</span></a>';
+			echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . __('Read <span aria-hidden="true">the article</span>', 'simone') . '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><span class="screen-reader-text"> ' . esc_html( simone_get_read_more_title() ) . '</span></a>';
 			echo '</footer><!-- .entry-footer -->';
 		} else {
 			?>
@@ -93,9 +107,9 @@
 			<footer class="entry-footer continue-reading">
 			<?php
 			if ( $simone_archive_content == 'content' ) {
-				echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . __('Read <span aria-hidden="true">the article</span>', 'simone') . '<i class="fa fa-arrow-circle-o-right"></i><span class="screen-reader-text"> ' . esc_html( simone_get_read_more_title() ) . '</span></a>';
+				echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . __('Read <span aria-hidden="true">the article</span>', 'simone') . '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><span class="screen-reader-text"> ' . esc_html( simone_get_read_more_title() ) . '</span></a>';
 			} else {
-				echo '<a href="' . esc_url( get_permalink() ). '" rel="bookmark">' . __('Continue Reading', 'simone' ) . '<i class="fa fa-arrow-circle-o-right"></i><span class="screen-reader-text"> ' . esc_html( simone_get_read_more_title() ) . '</span></a>';
+				echo '<a href="' . esc_url( get_permalink() ). '" rel="bookmark">' . __('Continue Reading', 'simone' ) . '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><span class="screen-reader-text"> ' . esc_html( simone_get_read_more_title() ) . '</span></a>';
 			}
 			?>
 			</footer><!-- .entry-footer -->

@@ -20,6 +20,31 @@ image sizes being loaded to fit individual screen sizes.
 
 == Changelog ==
 
+=== 2.2.1 ===
+Removed the legacy XFN profile link.
+Added aria-hidden to the arrow icons that show after "Continue reading".
+Legacy support for classic widget titles: Replaced heading level H1 with H2.
+
+Addressed requirements from the accessibility-ready review:
+Changed the focus outline from dotted to solid.
+Changed the aria-label of the menu in the header from Main to Primary.
+Disabled the insertion of the core block patterns because the widths don't work well.
+Added a screen reader text that identifies sticky posts.
+Added a new h1 heading to the "posts page" (the blog page) when one is selected in Settings > Reading.
+Removed the link from the post dates on archives.
+Added a unique accessible name (screen reader text) to the "Leave a comment" links.
+Added a unique accessible name (screen reader text) to the "Edit" links on archives.
+Changed the default color of the border of form text input fields, to increase the color contrast.
+Set a 100% width on form text input fields so that the WordPress default "size" attribute does not 
+cause a scrollbar on small browser widths when a 400% zoom is used.
+Changed the heading level of the post titles in the "recent post" sections on the 404 page and search results page 
+from H2 to H3.
+Made sure the submit button for the search form is visible on the 404 page and search results page.
+Reduced the number of aside elements. Instead of each widget using an aside element, aside is now used to wrap all widgets 
+in the sidebar, and the section element is used to wrap the footer widget area.
+Added an aria-label to the sidebar wrapper.
+Reverted the styling of the HTML elements mark and ins to the browser defaults, to resolve a color contrast issue.
+
 === 2.2 ===
 Updated minimum required versions.
 Introduced theme.json, with support for borders, shadows, and font family. Removed code that is replaced by theme.json.
@@ -43,7 +68,7 @@ When the user has not entered a post title, the post id is now used to ensure "p
 Fixed a bug with the link text for "All posts by..." in the author box. Note: to test the author box, the user needs to have a biography filled in.
 Updated the "hide author box" control from a link to a button.
 Added an accessible name to linked featured images.
-Moved the display of the category lins to the post meta section. They were previously above the post title.
+Moved the display of the category links to the post meta section. They were previously above the post title.
 Removed support for Google + since the service has been discountinued.
 Replaced Twitter with X.
 Removed the legacy admin header code. This screen is no longer used in the WP admin, the customizer is used instead.

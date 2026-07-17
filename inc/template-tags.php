@@ -131,12 +131,61 @@ if ( ! function_exists( 'simone_posted_on' ) ) {
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author() )
 			),
-			sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-				esc_url( get_permalink() ),
-				$time_string
-			)
+			$time_string
 		);
 	}
+}
+
+if ( ! function_exists( 'simone_get_comments_popup_link_text' ) ) {
+	/**
+	 * Return comment link text with a hidden post-specific label.
+	 *
+	 * @param int $comments_number Comment count.
+	 * @return string
+	 */
+	function simone_get_comments_popup_link_text( $comments_number ) {
+		$post_title = get_the_title() ? get_the_title() : simone_get_untitled_title();
+
+		if ( 0 === (int) $comments_number ) {
+			$text = __( 'Leave a comment', 'simone' );
+			$screen_reader_text = sprintf( __( ' on %s', 'simone' ), $post_title );
+		} elseif ( 1 === (int) $comments_number ) {
+			$text = __( '1 Comment', 'simone' );
+			$screen_reader_text = sprintf( __( ' on %s', 'simone' ), $post_title );
+		} else {
+			$text = sprintf( __( '%s Comments', 'simone' ), number_format_i18n( (int) $comments_number ) );
+			$screen_reader_text = sprintf( __( ' on %s', 'simone' ), $post_title );
+		}
+
+		return $text . '<span class="screen-reader-text">' . esc_html( $screen_reader_text ) . '</span>';
+	}
+}
+
+if ( ! function_exists( 'simone_edit_post_link' ) ) {
+	/**
+	 * Add a unique accessible name to the edit link.
+	 *
+	 * @param string $link    Edit link HTML.
+	 * @param int    $post_id Post ID.
+	 * @param string $text    Link text.
+	 * @return string
+	 */
+	function simone_edit_post_link( $link, $post_id, $text ) {
+		if ( is_single() ) {
+			return $link;
+		}
+
+		$post_title = get_the_title( $post_id ) ? get_the_title( $post_id ) : simone_get_untitled_title( $post_id );
+		$screen_reader_text = '<span class="screen-reader-text"> ' . esc_html( $post_title ) . '</span>.';
+
+		return preg_replace(
+			'/(<a[^>]*>)(.*?)(<\/a>)/s',
+			'$1$2' . $screen_reader_text . '$3',
+			$link,
+			1
+		);
+	}
+	add_filter( 'edit_post_link', 'simone_edit_post_link', 10, 3 );
 }
 
 /**
@@ -281,7 +330,7 @@ if ( ! function_exists( 'simone_get_untitled_title' ) ) {
 
 		return sprintf(
 			/* translators: %d: Post ID. */
-			__( '(no title #%d)', 'simone' ),
+			__( 'untitled post #%d', 'simone' ),
 			$post_id
 		);
 	}

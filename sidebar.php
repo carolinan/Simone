@@ -9,6 +9,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
-	<div id="secondary" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</div><!-- #secondary -->
+<aside id="secondary" class="widget-area" aria-label="<?php esc_attr_e( 'Sidebar', 'simone' ); ?>">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</aside><!-- #secondary -->

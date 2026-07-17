@@ -33,7 +33,11 @@
 			<?php
 			if ( ! post_password_required() && ( comments_open() || '0' !== get_comments_number() ) ) {
 				echo '<span class="comments-link">';
-				comments_popup_link( __( 'Leave a comment', 'simone' ), __( '1 Comment', 'simone' ), __( '% Comments', 'simone' ) );
+				comments_popup_link(
+					simone_get_comments_popup_link_text( get_comments_number() ),
+					simone_get_comments_popup_link_text( 1 ),
+					simone_get_comments_popup_link_text( get_comments_number() )
+				);
 				echo '<span class="meta-separator">' . esc_html_x( '.', 'separator between post meta links', 'simone' ) . '</span></span>';
 			}
 			?>

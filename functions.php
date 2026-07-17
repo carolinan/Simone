@@ -86,6 +86,9 @@ if ( ! function_exists( 'simone_setup' ) ) {
 			'caption',
 			'navigation-widgets'
 		) );
+
+		// Disable the insertion of the core block patterns.
+		remove_theme_support( 'core-block-patterns' );
 	}
 } // simone_setup
 
@@ -99,10 +102,10 @@ function simone_widgets_init() {
 		array(
 			'name'          => __( 'Sidebar', 'simone' ),
 			'id'            => 'sidebar-1',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">', //Legacy support for the old widget title.
+			'after_title'   => '</h2>',
 		)
 	);
 
@@ -111,10 +114,10 @@ function simone_widgets_init() {
 			'name'          => __( 'Footer Widget', 'simone' ),
 			'description'   => __( 'Footer widget area appears, not surprisingly, in the footer of the site.', 'simone' ),
 			'id'            => 'sidebar-2',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">', //Legacy support for the old widget title.
+			'after_title'   => '</h2>',
 		)
 );
 }

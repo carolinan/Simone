@@ -12,7 +12,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
 <?php
 if ( is_singular() && pings_open() ) {
 	printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
@@ -42,7 +41,7 @@ wp_head();
 			}
 			?>
 			<div class="title-box">
-				<?php if ( is_home() ) { ?>
+				<?php if ( is_front_page() && is_home() ) { ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php } else { ?>
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
@@ -55,7 +54,7 @@ wp_head();
 			</div>
 		</div>
 
-		<nav id="site-navigation" class="main-navigation clear" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'simone' ); ?>">
+		<nav id="site-navigation" class="main-navigation clear" role="navigation" aria-label="<?php esc_attr_e( 'Primary', 'simone' ); ?>">
 			<button class="menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false" data-label-open="<?php esc_attr_e( 'Open menu', 'simone' ); ?>" data-label-close="<?php esc_attr_e( 'Close menu', 'simone' ); ?>"><span aria-hidden="true"><?php _e( 'Menu', 'simone' ); ?></span><span class="screen-reader-text"><?php _e( 'Open menu', 'simone' ); ?></span></button>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
