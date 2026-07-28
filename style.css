@@ -484,11 +484,13 @@ a:active {
 		line-height: 3.75em;
 		color: white;
 		border: 0;
+		border-radius: 0;
 		background: transparent;
 	}
 
 	.menu-toggle:hover,
 	.menu-toggle:focus {
+		outline: 2px solid;
 		background: hsl(0, 0%, 30%);
 	}
 

@@ -24,6 +24,7 @@ image sizes being loaded to fit individual screen sizes.
 Removed the legacy XFN profile link.
 Added aria-hidden to the arrow icons that show after "Continue reading".
 Legacy support for classic widget titles: Replaced heading level H1 with H2.
+Changed the border radius and color on the menu toggle button.
 
 Addressed requirements from the accessibility-ready review:
 Changed the focus outline from dotted to solid.
