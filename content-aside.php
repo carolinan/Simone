@@ -16,7 +16,6 @@
 
 	<footer class="entry-footer entry-meta">
 			<?php simone_posted_on(); ?>
-			<?php edit_post_link( __( 'Edit', 'simone' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 	</div>
 </article><!-- #post-## -->

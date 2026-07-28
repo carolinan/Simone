@@ -41,7 +41,6 @@
 				echo '<span class="meta-separator">' . esc_html_x( '.', 'separator between post meta links', 'simone' ) . '</span></span>';
 			}
 			?>
-			<?php edit_post_link( __( 'Edit', 'simone' ), '<span class="edit-link">', '</span>' ); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

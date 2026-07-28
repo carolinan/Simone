@@ -33,7 +33,7 @@ Added a screen reader text that identifies sticky posts.
 Added a new h1 heading to the "posts page" (the blog page) when one is selected in Settings > Reading.
 Removed the link from the post dates on archives.
 Added a unique accessible name (screen reader text) to the "Leave a comment" links.
-Added a unique accessible name (screen reader text) to the "Edit" links on archives.
+Removed numerous "Edit" links because they were missing accessible names. 
 Changed the default color of the border of form text input fields, to increase the color contrast.
 Set a 100% width on form text input fields so that the WordPress default "size" attribute does not 
 cause a scrollbar on small browser widths when a 400% zoom is used.

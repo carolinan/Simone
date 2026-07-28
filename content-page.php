@@ -32,5 +32,4 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'simone' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->
